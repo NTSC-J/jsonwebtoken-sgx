@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use std::error::Error as StdError;
 use std::fmt;
 use std::result;

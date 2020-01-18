@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use crypto::Algorithm;
 
 /// A basic JWT header, the alg defaults to HS256 and typ is automatically
