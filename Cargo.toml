@@ -23,8 +23,8 @@ serde = { git = "https://github.com/mesalock-linux/serde-sgx", features = ["deri
 ring = { git = "https://github.com/mesalock-linux/ring-sgx", tag = "v0.16.5" }
 base64 = { git = "https://github.com/mesalock-linux/rust-base64-sgx" }
 # For PEM decoding
-pem = { path = "../pem-rs-sgx" }
-simple_asn1 = { path = "../simple_asn1-sgx" }
+pem = { rev = "sgx-1.1.2", git = "https://github.com/NTSC-J/pem-rs-sgx.git" }
+simple_asn1 = { rev = "sgx-1.1.2", git = "https://github.com/NTSC-J/simple_asn1-sgx.git" }
 
 [dev-dependencies]
 # For the custom chrono example
