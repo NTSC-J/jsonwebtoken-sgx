@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use serde::{Deserialize, Serialize};
 
 use crate::algorithms::Algorithm;

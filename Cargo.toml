@@ -19,13 +19,12 @@ mesalock_sgx = ["sgx_tstd", "sgx_tstd/backtrace"]
 [dependencies]
 sgx_tstd = { rev = "v1.1.2", git = "https://github.com/apache/teaclave-sgx-sdk.git", optional = true }
 serde_json =  { git = "https://github.com/mesalock-linux/serde-json-sgx" }
-serde_derive = { git = "https://github.com/mesalock-linux/serde-sgx" }
-serde = { git = "https://github.com/mesalock-linux/serde-sgx" }
+serde = { git = "https://github.com/mesalock-linux/serde-sgx", features = ["derive"] }
 ring = { git = "https://github.com/mesalock-linux/ring-sgx", tag = "v0.16.5" }
 base64 = { git = "https://github.com/mesalock-linux/rust-base64-sgx" }
 # For PEM decoding
-pem = "0.8"
-simple_asn1 = "0.4"
+pem = { path = "../pem-rs-sgx" }
+simple_asn1 = { path = "../simple_asn1-sgx" }
 
 [dev-dependencies]
 # For the custom chrono example

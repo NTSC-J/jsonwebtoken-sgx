@@ -1,5 +1,7 @@
+use std::prelude::v1::*;
 use std::collections::HashSet;
 use std::time::{SystemTime, UNIX_EPOCH};
+use std::untrusted::time::SystemTimeEx;
 use serde_json::map::Map;
 use serde_json::{from_value, Value};
 
@@ -102,17 +104,7 @@ fn get_current_timestamp() -> u64 {
 }
 
 pub fn validate(claims: &Map<String, Value>, options: &Validation) -> Result<()> {
-<<<<<<< HEAD
-    use std::time::SystemTime;
-    use std::time::UNIX_EPOCH;
-    use std::untrusted::time::SystemTimeEx;
-    
-    
-    let now = SystemTime::now().duration_since(UNIX_EPOCH).unwrap();
-    let now = now.as_secs() as i64;
-=======
     let now = get_current_timestamp();
->>>>>>> 90b97007484e782994120587e751108819b7aa50
 
     if options.validate_exp {
         if let Some(exp) = claims.get("exp") {

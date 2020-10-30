@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use ring::constant_time::verify_slices_are_equal;
 use ring::{hmac, signature};
 

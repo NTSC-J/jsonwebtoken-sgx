@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use ring::{rand, signature};
 
 use crate::algorithms::Algorithm;
