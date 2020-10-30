@@ -1,14 +1,16 @@
 [package]
 name = "jsonwebtoken"
-version = "6.0.1"
-authors = ["Vincent Prouillet <prouillet.vincent@gmail.com>"]
+version = "7.2.0"
+authors = ["Vincent Prouillet <hello@vincentprouillet.com>"]
 license = "MIT"
 readme = "README.md"
-description = "Create and parse JWT in a strongly typed way."
-homepage = "https://github.com/Keats/rust-jwt"
-repository = "https://github.com/Keats/rust-jwt"
-keywords = ["jwt", "web", "api", "token", "json"]
- exclude = ["/sgx/*"]
+description = "Create and decode JWTs in a strongly typed way."
+homepage = "https://github.com/Keats/jsonwebtoken"
+repository = "https://github.com/Keats/jsonwebtoken"
+keywords = ["jwt", "web", "api", "token", "jwk"]
+edition = "2018"
+include = ["src/**/*", "LICENSE", "README.md", "CHANGELOG.md"]
+exclude = ["/sgx/*"]
 
 [features]
 default = ["mesalock_sgx"]
@@ -21,5 +23,18 @@ serde_derive = { git = "https://github.com/mesalock-linux/serde-sgx" }
 serde = { git = "https://github.com/mesalock-linux/serde-sgx" }
 ring = { git = "https://github.com/mesalock-linux/ring-sgx", tag = "v0.16.5" }
 base64 = { git = "https://github.com/mesalock-linux/rust-base64-sgx" }
+# For PEM decoding
+pem = "0.8"
+simple_asn1 = "0.4"
+
+[dev-dependencies]
+# For the custom chrono example
 chrono = { git = "https://github.com/mesalock-linux/chrono-sgx" }
-untrusted = "0.7"
+criterion = "0.3"
+
+[[bench]]
+name = "jwt"
+harness = false
+
+[badges]
+maintenance = { status = "passively-maintained" }
